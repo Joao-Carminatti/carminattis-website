@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import LighthouseGauge from "./LighthouseGauge";
 import {
@@ -9,12 +9,12 @@ import {
   WHATSAPP_DEFAULT_MESSAGE,
 } from "@/lib/constants";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
