@@ -3,7 +3,7 @@
 export const SITE_NAME = "Carminatti's Web Agency";
 
 // TODO: ajustar para o domínio real quando o deploy de produção existir.
-export const SITE_URL = "https://carminattis.com.br";
+export const SITE_URL = "https://carminattiwebagency.com.br";
 
 export const SITE_DESCRIPTION =
   "Engenharia de software para imobiliárias que querem vender mais. Sites em Next.js com nota 100 no Google Lighthouse, entregues em até 5 dias úteis.";
