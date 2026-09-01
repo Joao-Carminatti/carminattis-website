@@ -3,6 +3,8 @@
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import LighthouseGauge from "./LighthouseGauge";
+import Magnetic from "./Magnetic";
+import RevealLines from "./RevealLines";
 import {
   buildWhatsappLink,
   LIGHTHOUSE_SCORES,
@@ -51,15 +53,22 @@ export default function Hero() {
             AUDITADO PELO GOOGLE LIGHTHOUSE
           </motion.p>
 
-          <motion.h1
-            variants={item}
+          <h1
             id="hero-heading"
             className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-fg sm:text-5xl lg:text-6xl"
           >
-            Engenharia de software para{" "}
-            <span className="text-good">imobiliárias</span> que querem vender
-            mais
-          </motion.h1>
+            <RevealLines
+              fullText="Engenharia de software para imobiliárias que querem vender mais"
+              baseDelay={0.1}
+              lines={[
+                "Engenharia de software para",
+                <span key="highlight" className="text-good">
+                  imobiliárias
+                </span>,
+                "que querem vender mais",
+              ]}
+            />
+          </h1>
 
           <motion.p variants={item} className="mt-6 max-w-xl text-lg text-muted">
             Trocamos sites lentos de CRM por uma estrutura própria em Next.js
@@ -68,16 +77,18 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href={buildWhatsappLink(WHATSAPP_DEFAULT_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Solicitar diagnóstico gratuito pelo WhatsApp"
-              className="inline-flex items-center gap-2 rounded-full bg-good px-6 py-3.5 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-            >
-              Solicitar diagnóstico gratuito
-              <ArrowRight size={16} aria-hidden="true" />
-            </a>
+            <Magnetic>
+              <a
+                href={buildWhatsappLink(WHATSAPP_DEFAULT_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Solicitar diagnóstico gratuito pelo WhatsApp"
+                className="inline-flex items-center gap-2 rounded-full bg-good px-6 py-3.5 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                Solicitar diagnóstico gratuito
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </Magnetic>
             <a
               href="#comparativo"
               aria-label="Ver comparativo de performance"
