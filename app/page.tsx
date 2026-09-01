@@ -1,7 +1,5 @@
 import dynamic from "next/dynamic";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
 
 // Seções abaixo da dobra são isoladas em chunks separados: reduzem o bundle
 // inicial sem perder SEO, pois next/dynamic ainda renderiza no servidor
@@ -23,15 +21,11 @@ function SectionSkeleton() {
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main id="conteudo-principal">
-        <Hero />
-        <Features />
-        <PerformanceComparator />
-        <DeliveryTimeline />
-      </main>
-      <Footer />
-    </>
+    <main id="conteudo-principal">
+      <Hero />
+      <Features />
+      <PerformanceComparator />
+      <DeliveryTimeline />
+    </main>
   );
 }

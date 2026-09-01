@@ -1,15 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { buildWhatsappLink, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/constants";
 
+// Prefixo "/" nos anchors: como agora existe mais de uma página, um link
+// tipo "/#recursos" funciona tanto a partir da home quanto de /projetos —
+// o navegador carrega a home e rola até a seção. "#recursos" sozinho só
+// funcionaria se você já estivesse na home.
 const NAV_LINKS = [
-  { href: "#recursos", label: "Recursos" },
-  { href: "#comparativo", label: "Comparativo" },
-  { href: "#processo", label: "Processo" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#recursos", label: "Recursos" },
+  { href: "/#comparativo", label: "Comparativo" },
+  { href: "/projetos", label: "Projetos" },
+  { href: "/#processo", label: "Processo" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 export default function Header() {
@@ -23,23 +29,23 @@ export default function Header() {
       className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ink/70 backdrop-blur-xl"
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a
-          href="#top"
-          aria-label="Carminatti's Web Agency, voltar ao topo"
+        <Link
+          href="/"
+          aria-label="Carminatti's Web Agency, ir para a página inicial"
           className="rounded-sm font-display text-lg font-semibold tracking-tight text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
         >
           Carminatti&apos;s<span className="text-good">.</span>
-        </a>
+        </Link>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="rounded-sm text-sm text-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -72,13 +78,13 @@ export default function Header() {
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="block rounded-sm text-sm text-muted hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
