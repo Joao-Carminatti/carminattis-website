@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 import { buildWhatsappLink, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/constants";
 
 // Prefixo "/" nos anchors: como agora existe mais de uma página, um link
@@ -32,9 +33,9 @@ export default function Header() {
         <Link
           href="/"
           aria-label="Carminatti's Web Agency, ir para a página inicial"
-          className="rounded-sm font-display text-lg font-semibold tracking-tight text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+          className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
         >
-          Carminatti&apos;s<span className="text-good">.</span>
+          <Logo variant="full" />
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-8 md:flex">
