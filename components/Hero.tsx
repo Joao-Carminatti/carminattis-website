@@ -45,14 +45,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <motion.div variants={container} initial="hidden" animate="show">
-          <motion.p
-            variants={item}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-panel px-4 py-1.5 font-mono text-xs text-good"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-good" aria-hidden="true" />
-            AUDITADO PELO GOOGLE LIGHTHOUSE
-          </motion.p>
-
           <h1
             id="hero-heading"
             className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-fg sm:text-5xl lg:text-6xl"

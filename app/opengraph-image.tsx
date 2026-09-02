@@ -20,7 +20,6 @@ const HEADLINE_LINES = [
   "que querem vender mais",
 ];
 const TAGLINE = "Sites em Next.js com nota 100 no Google Lighthouse";
-const KICKER = "AUDITADO PELO GOOGLE LIGHTHOUSE";
 const GAUGES = ["Performance", "Acessibilidade", "Práticas", "SEO"];
 
 /**
@@ -34,7 +33,6 @@ async function loadFont(): Promise<ArrayBuffer | null> {
     const text = [
       ...HEADLINE_LINES,
       TAGLINE,
-      KICKER,
       ...GAUGES,
       "100",
       "carminattis.com.br",
@@ -131,29 +129,6 @@ export default async function Image() {
             width: "60%",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              color: GOOD,
-              fontSize: 19,
-              letterSpacing: 2,
-              marginBottom: 26,
-            }}
-          >
-            <div
-              style={{
-                width: 10,
-                height: 10,
-                borderRadius: "50%",
-                backgroundColor: GOOD,
-                display: "flex",
-              }}
-            />
-            {KICKER}
-          </div>
-
           <div
             style={{
               display: "flex",
